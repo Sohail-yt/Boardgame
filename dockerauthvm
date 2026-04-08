@@ -1,0 +1,37 @@
+ubuntu@ip-172-31-39-252:~/BoardgameTest$ ls
+Boardgame  dockerauth
+ubuntu@ip-172-31-39-252:~/BoardgameTest$ vi dockerauth
+- sudo usermod -aG docker $USER
+- newgrp docker
+ then test
+- docker ps
+- eixt
+Verify you’re in docker group
+- groups
+You should see
+- ubuntu docker
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+"dockerauth" 9L, 150B                                                                               1,1           All
+

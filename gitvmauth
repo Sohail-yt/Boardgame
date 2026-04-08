@@ -1,0 +1,19 @@
+1. Generate SSH key
+- ssh-keygen -t ed25519 -C "your_email@example.com"
+
+2. Copy your public key
+- cat ~/.ssh/id_ed25519.pub
+
+3. Add to GitHub
+- Go to: https://github.com/settings/keys
+- Click New SSH key
+- Paste the key and save
+
+4. Change your repo to SSH
+- git remote set-url origin git@github.com:'your repo'
+
+5. Test connection
+- ssh -T git@github.com
+
+6. Expected 
+- Hi 'reponame'! You've successfully authenticated.
