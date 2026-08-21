@@ -5,6 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -20,20 +21,33 @@
     <description>Project for Spring Boot</description>
     <packaging>jar</packaging>
 
+
+    <!-- ====================================================== -->
+    <!-- PROPERTIES -->
+    <!-- ====================================================== -->
+
     <properties>
 
+        <!-- Java -->
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
 
+        <!-- Lombok -->
         <lombok.version>1.18.38</lombok.version>
 
+        <!-- JaCoCo -->
         <jacoco.version>0.8.13</jacoco.version>
 
     </properties>
 
+
+    <!-- ====================================================== -->
+    <!-- DEPENDENCIES -->
+    <!-- ====================================================== -->
+
     <dependencies>
 
-        <!-- Thymeleaf Security 6 for Spring Security 6 -->
+        <!-- Thymeleaf Security -->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
@@ -63,7 +77,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- H2 -->
+        <!-- H2 Database -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -100,11 +114,16 @@
 
     </dependencies>
 
+
+    <!-- ====================================================== -->
+    <!-- BUILD -->
+    <!-- ====================================================== -->
+
     <build>
 
         <plugins>
 
-            <!-- Spring Boot -->
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -120,7 +139,8 @@
 
             </plugin>
 
-            <!-- Java 21 Compiler -->
+
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -131,6 +151,16 @@
                 </configuration>
             </plugin>
 
+
+            <!-- Maven Surefire Plugin -->
+            <!-- Runs JUnit tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+
+
             <!-- JaCoCo -->
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -139,6 +169,7 @@
 
                 <executions>
 
+                    <!-- Prepare JaCoCo agent -->
                     <execution>
                         <id>jacoco-initialize</id>
                         <goals>
@@ -146,6 +177,7 @@
                         </goals>
                     </execution>
 
+                    <!-- Generate JaCoCo report -->
                     <execution>
                         <id>jacoco-site</id>
                         <phase>package</phase>
@@ -161,6 +193,11 @@
         </plugins>
 
     </build>
+
+
+    <!-- ====================================================== -->
+    <!-- NEXUS REPOSITORY -->
+    <!-- ====================================================== -->
 
     <distributionManagement>
 
